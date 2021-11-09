@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap');
+/*font-family: 'Josefin Sans', sans-serif;*/
+
+:root{
+    /*Primary*/
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+    /*Neutral*/
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1{
+    text-transform: uppercase;
+    color: var(--Dark-Grayish-Red);
+    font-size: 70px;
+    font-weight: 400;
+
+    letter-spacing: 15px;
+}
+h1 span{
+    color: var(--Desaturated-Red);
+    font-weight: 200;
+    letter-spacing: 15px;
+}
+
+p{
+    line-height: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: var(--Desaturated-Red);
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    display: flex;
+    height: 100vh;
+}
+
+.portrait-img{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-image: url("/images/hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35%;
+    height: 100vh;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-left: 300px;
+    padding-right: 300px;
+}
+
+.logo img{
+    width: 250px;
+    position: absolute;
+    top: 80px;
+}
+.content-text{
+    max-width: 500px;
+}
+
+.email-field{
+    border: solid 1px var(--Desaturated-Red);
+    border-radius: 25px;
+    padding: 15px;
+    padding-left: 30px;
+    color: var(--Desaturated-Red);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    width: 400px
+}
+.email-field.active{
+    border: solid 2px var(--Soft-Red);
+}
+.email-field:focus{
+    outline: none;
+}
+
+.submit-btn{
+    border: solid 1px var(--Desaturated-Red);
+    padding: 17px;
+    border-radius: 25px;
+    width: 125px;
+    position: relative;
+    margin-left: -75px;
+    padding-bottom: 18px;
+    background: url("/images/icon-arrow.svg") center no-repeat;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 74%, 74%));
+}
+
+.btn-arrow{
+    left: -70px;
+    top: 5px;
+    position: relative;
+    color: white;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.validation-error{
+    display: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: var(--Soft-Red);
+}
+.validation-error.active{
+    display: inline-block;
+}
+
+@media screen and (max-width: 375px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    .logo img{
+        order: 1;
+        position: absolute;
+        width: 150px;
+        top: 50px;
+        left: 20px;
+        margin-top: 0px;
+    }
+    .portrait-img{
+        order: 1;
+        position: relative;
+        top: 125px;
+        width: 100%;
+        height: 275px;
+        background-image: url("/images/hero-desktop.jpg");
+        background-repeat: no-repeat;
+        object-fit: cover;
+        object-position: 20% 0;
+    }
+    .content{
+        order: 2;
+        margin-top: 175px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        text-transform: uppercase;
+        color: var(--Dark-Grayish-Red);
+        font-size: 50px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 15px;
+    }
+    h1 span{
+        color: var(--Desaturated-Red);
+        font-weight: 200;
+        font-size: 45px;
+        letter-spacing: 15px;
+    }
+    p{
+        text-align: center;
+        line-height: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: var(--Desaturated-Red);
+    }
+    .email-field{
+        border: solid 1px var(--Desaturated-Red);
+        border-radius: 25px;
+        padding: 15px;
+        padding-left: 30px;
+        color: var(--Desaturated-Red);
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+        width: 250px;
+    }
+    .email-field.active{
+        border: solid 2px var(--Soft-Red);
+    }
+    .submit-btn{
+        width: 75px;
+        margin-left: -75px;
+        padding-bottom: 18px;
+        background: url("/images/icon-arrow.svg") center no-repeat;
+        cursor: pointer;
+    
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        transition: all 0.3s ease;
+    }
+    .btn-arrow{
+        left: -50px;
+        top: 5px;
+        position: relative;
+        color: white;
+        z-index: 0;
+    }
+    .validation-error{
+        display: none;
+        margin-top: 10px;
+        margin-left: -50px;
+        color: var(--Soft-Red);
+        font-size: 14px
+    }
+}
